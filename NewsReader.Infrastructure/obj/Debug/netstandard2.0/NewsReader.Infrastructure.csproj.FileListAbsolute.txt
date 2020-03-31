@@ -1,0 +1,12 @@
+C:\Users\ryanconnolly\source\repos\NewsReader\NewsReader.Infrastructure\bin\Debug\netstandard2.0\NewsReader.Infrastructure.deps.json
+C:\Users\ryanconnolly\source\repos\NewsReader\NewsReader.Infrastructure\bin\Debug\netstandard2.0\NewsReader.Infrastructure.dll
+C:\Users\ryanconnolly\source\repos\NewsReader\NewsReader.Infrastructure\bin\Debug\netstandard2.0\NewsReader.Infrastructure.pdb
+C:\Users\ryanconnolly\source\repos\NewsReader\NewsReader.Infrastructure\obj\Debug\netstandard2.0\NewsReader.Infrastructure.csprojAssemblyReference.cache
+C:\Users\ryanconnolly\source\repos\NewsReader\NewsReader.Infrastructure\obj\Debug\netstandard2.0\NewsReader.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\ryanconnolly\source\repos\NewsReader\NewsReader.Infrastructure\obj\Debug\netstandard2.0\NewsReader.Infrastructure.AssemblyInfo.cs
+C:\Users\ryanconnolly\source\repos\NewsReader\NewsReader.Infrastructure\obj\Debug\netstandard2.0\NewsReader.Infrastructure.dll
+C:\Users\ryanconnolly\source\repos\NewsReader\NewsReader.Infrastructure\obj\Debug\netstandard2.0\NewsReader.Infrastructure.pdb
+C:\Users\ryanconnolly\source\repos\NewsReader\NewsReader.Infrastructure\bin\Debug\netstandard2.0\NewsReader.Domain.dll
+C:\Users\ryanconnolly\source\repos\NewsReader\NewsReader.Infrastructure\bin\Debug\netstandard2.0\NewsReader.Domain.pdb
+C:\Users\ryanconnolly\source\repos\NewsReader\NewsReader.Infrastructure\obj\Debug\netstandard2.0\NewsReader.Infrastructure.csproj.CopyComplete
+C:\Users\ryanconnolly\source\repos\NewsReader\NewsReader.Infrastructure\obj\Debug\netstandard2.0\NewsReader.Infrastructure.csproj.CoreCompileInputs.cache

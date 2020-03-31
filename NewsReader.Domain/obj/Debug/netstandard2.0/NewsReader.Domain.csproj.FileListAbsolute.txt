@@ -1,0 +1,9 @@
+C:\Users\ryanconnolly\source\repos\NewsReader\NewsReader.Domain\bin\Debug\netstandard2.0\NewsReader.Domain.deps.json
+C:\Users\ryanconnolly\source\repos\NewsReader\NewsReader.Domain\bin\Debug\netstandard2.0\NewsReader.Domain.dll
+C:\Users\ryanconnolly\source\repos\NewsReader\NewsReader.Domain\bin\Debug\netstandard2.0\NewsReader.Domain.pdb
+C:\Users\ryanconnolly\source\repos\NewsReader\NewsReader.Domain\obj\Debug\netstandard2.0\NewsReader.Domain.csprojAssemblyReference.cache
+C:\Users\ryanconnolly\source\repos\NewsReader\NewsReader.Domain\obj\Debug\netstandard2.0\NewsReader.Domain.csproj.CoreCompileInputs.cache
+C:\Users\ryanconnolly\source\repos\NewsReader\NewsReader.Domain\obj\Debug\netstandard2.0\NewsReader.Domain.AssemblyInfoInputs.cache
+C:\Users\ryanconnolly\source\repos\NewsReader\NewsReader.Domain\obj\Debug\netstandard2.0\NewsReader.Domain.AssemblyInfo.cs
+C:\Users\ryanconnolly\source\repos\NewsReader\NewsReader.Domain\obj\Debug\netstandard2.0\NewsReader.Domain.dll
+C:\Users\ryanconnolly\source\repos\NewsReader\NewsReader.Domain\obj\Debug\netstandard2.0\NewsReader.Domain.pdb
