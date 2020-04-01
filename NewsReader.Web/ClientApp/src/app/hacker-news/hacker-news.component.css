@@ -1,0 +1,44 @@
+a:link, a:visited {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover, a:active {
+}
+
+.item-container{
+    margin:10px 0 0 -15px;
+}
+
+.rank {
+  float: left;
+  background: #fff;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 50px;
+  text-align: right;
+  margin: 0 2px 0 0;
+}
+
+.hostName {
+  margin-left: 5px;
+  font-size: 10px;
+}
+
+.url {
+  overflow: hidden;
+  background-color: #fff;
+  height: 25px;
+}
+
+.sub {
+  overflow: hidden;
+  background-color: #fff;
+  height: 15px;
+  font-size: 10px;
+  margin: 0 0 10px 0;
+}
+
+#LoadMore{
+    margin:10px 0 0 15px;
+}

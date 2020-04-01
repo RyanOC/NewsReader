@@ -1,0 +1,29 @@
+<h3 id="tableLabel">Hacker News</h3>
+
+<div *ngFor="let item of hackerNewsItems; let i = index" class="item-container">
+
+  <div class="rank">{{i+1}}.</div>
+  <div class="url">
+
+    <a *ngIf="item.url" href="{{item?.url}}" target="_blank">{{item.title}}</a>
+    <a *ngIf="!item.url" href="https://news.ycombinator.com/item?id={{item.id}}" target="_blank">{{item.title}}</a>
+
+    <span *ngIf="item.url" class="hostName">
+      <a href="//{{getHostName(item?.url)}}" target="_blank">({{getHostName(item?.url)}})</a>
+    </span>
+
+    <span *ngIf="!item.url" class="hostName">
+      <a href="https://news.ycombinator.com/item?id={{item.id}}" target="_blank">(news.ycombinator.com)</a>
+    </span>
+
+  </div>
+
+  <div class="sub">{{item.score}} points | {{convert(item.time)}}</div>
+
+</div>
+<div id="LoadMore">
+  <p *ngIf="loading"><em>Loading...</em></p>
+  <button *ngIf="!loading" (click)="loadMore()">Load more</button>
+</div>
+
+<p></p>
