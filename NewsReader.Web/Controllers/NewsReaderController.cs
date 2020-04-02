@@ -13,22 +13,22 @@ namespace NewsReader.Web.Controllers
     {
         private readonly ILogger<NewsReaderController> _logger;
         public IConfiguration _configuration { get; }
-        public INewsReaderService _newsReaderService { get; }
+        public IHackerNewsService _hackerNewsService { get; }
 
-        public NewsReaderController(ILogger<NewsReaderController> logger, IConfiguration configuration, INewsReaderService newsReaderService)
+        public NewsReaderController(ILogger<NewsReaderController> logger, IConfiguration configuration, IHackerNewsService newsReaderService)
         {
             _logger = logger;
             _configuration = configuration;
-            _newsReaderService = newsReaderService;
+            _hackerNewsService = newsReaderService;
         }
 
         [Route("api/newsreader/{pageIndex}")]
         [HttpGet]
         public async Task<IEnumerable<HackerNewsItem>> Get(int pageIndex)
         {
-            var take = 10;
+            var take = int.Parse(_configuration["page_count"]);
 
-            return await _newsReaderService.GetItems(pageIndex * take, take);
+            return await _hackerNewsService.GetItemsAsync(pageIndex * take, take);
         }
     }
 }

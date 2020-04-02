@@ -4,8 +4,8 @@ using System.Threading.Tasks;
 
 namespace NewsReader.Domain.Contracts
 {
-    public interface INewsReaderService
+    public interface IHackerNewsService
     {
-        Task<List<HackerNewsItem>> GetItems(int skip, int take);
+        Task<List<HackerNewsItem>> GetItemsAsync(int skip, int take);
     }
 }

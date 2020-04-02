@@ -18,7 +18,7 @@ namespace NewsReader.Infrastructure
             Configuration = configuration;
         }
 
-        public async Task<List<string>> GetTopStories()
+        public async Task<List<string>> GetTopStoriesAsync()
         {
             var client = HttpClientFactory.CreateClient("hackernewsapi");
             var response = await client.GetAsync("topstories.json");
@@ -27,7 +27,7 @@ namespace NewsReader.Infrastructure
             return Newtonsoft.Json.JsonConvert.DeserializeObject<List<string>>(listJson);
         }
 
-        public async Task<HackerNewsItem> GetItem(int id)
+        public async Task<HackerNewsItem> GetItemAsync(int id)
         {
             var client = HttpClientFactory.CreateClient("hackernewsapi");
             var response = await client.GetAsync($"item/{id}.json");

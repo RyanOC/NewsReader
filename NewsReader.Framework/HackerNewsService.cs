@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace NewsReader.Framework
 {
-    public class HackerNewsService : INewsReaderService
+    public class HackerNewsService : IHackerNewsService
     {
         public IHackerNewsGateway HackerNewsGateway { get; }
 
@@ -14,15 +14,15 @@ namespace NewsReader.Framework
             HackerNewsGateway = newsReaderGateway;
         }
 
-        public async Task<List<HackerNewsItem>> GetItems(int skip, int take)
+        public async Task<List<HackerNewsItem>> GetItemsAsync(int skip, int take)
         {
             var newsArticleList = new List<HackerNewsItem>();
-            var topStories = await HackerNewsGateway.GetTopStories();
+            var topStories = await HackerNewsGateway.GetTopStoriesAsync();
 
             //todo: refactor/cleanup using linq
             for (int i = skip; i < take + skip; i++)
             {
-                newsArticleList.Add(await HackerNewsGateway.GetItem(int.Parse(topStories[i])));
+                newsArticleList.Add(await HackerNewsGateway.GetItemAsync(int.Parse(topStories[i])));
             }
 
             return newsArticleList;

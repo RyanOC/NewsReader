@@ -6,7 +6,7 @@ namespace NewsReader.Domain.Contracts
 {
     public interface IHackerNewsGateway
     {
-        Task<List<string>> GetTopStories();
-        Task<HackerNewsItem> GetItem(int id);
+        Task<List<string>> GetTopStoriesAsync();
+        Task<HackerNewsItem> GetItemAsync(int id);
     }
 }

@@ -38,7 +38,7 @@ namespace NewsReader.Web
                 c.BaseAddress = new Uri(Configuration["HackerNewsApi"]);
             }).AddTransientHttpErrorPolicy(p => p.RetryAsync(5));
 
-            services.AddScoped<INewsReaderService, HackerNewsService>();
+            services.AddScoped<IHackerNewsService, HackerNewsService>();
             services.AddScoped<IHackerNewsGateway, HackerNewsGateway>();
         }
 
