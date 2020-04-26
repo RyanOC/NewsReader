@@ -12,9 +12,10 @@ Other .Net Libraries Used:
 - Moq
 - XUnit
 
-### Demo Links:
-- [API](https://app-news-reader-api-dev.azurewebsites.net/api/newsreader/0)
-- [UI](https://app-news-reader-ui-dev.azurewebsites.net/) (coming soon)
+### Demo Links: ![azure build status](https://dev.azure.com/ryanoc333/ryanoc333/_apis/build/status/News%20Reader-Dev-CI?branchName=master)
+
+- [API](https://app-news-reader-dev.azurewebsites.net/api/newsreader/0)
+- [UI](https://app-news-reader-dev.azurewebsites.net/hacker-news)
 
 ### Backlog:
 - Add factory methods to create additional news feeds while maintaining clean code.
