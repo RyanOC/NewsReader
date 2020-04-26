@@ -1,28 +1,45 @@
-﻿using NewsReader.Domain.Contracts;
-using NewsReader.Domain.Models;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
+using NewsReader.Domain.Contracts;
+using NewsReader.Domain.Models;
 
 namespace NewsReader.Framework
 {
     public class HackerNewsService : IHackerNewsService
     {
-        public IHackerNewsGateway HackerNewsGateway { get; }
+        private readonly IConfiguration _configuration;
+        private readonly IHackerNewsGateway _hackerNewsGateway;
 
-        public HackerNewsService(IHackerNewsGateway newsReaderGateway)
+        public HackerNewsService(IConfiguration configuration, IHackerNewsGateway hackerNewsGateway)
         {
-            HackerNewsGateway = newsReaderGateway;
+            _configuration = configuration;
+            _hackerNewsGateway = hackerNewsGateway;
         }
 
-        public async Task<List<HackerNewsItem>> GetItemsAsync(int skip, int take)
+        public async Task<List<HackerNewsItem>> GetItemsAsync(int pageIndex)
         {
             var newsArticleList = new List<HackerNewsItem>();
-            var topStories = await HackerNewsGateway.GetTopStoriesAsync();
+            var topStories = await _hackerNewsGateway.GetTopStoriesAsync();
+            var totalItems = topStories.Count;
+            var pageSize = int.Parse(_configuration["page_count"]);
+            var totalPageIndexes = (int)Math.Ceiling(totalItems / (decimal)pageSize) -1;
 
-            //todo: refactor/cleanup using linq
-            for (int i = skip; i < take + skip; i++)
+            if (pageIndex < 0)
             {
-                newsArticleList.Add(await HackerNewsGateway.GetItemAsync(int.Parse(topStories[i])));
+                pageIndex = 0;
+            }
+            else if (pageIndex > totalPageIndexes)
+            {
+                pageIndex = totalPageIndexes;
+            }
+
+            var startIndex = pageIndex * pageSize;
+
+            for (int i = startIndex; i < pageSize + startIndex; i++)
+            {
+                newsArticleList.Add(await _hackerNewsGateway.GetItemAsync(int.Parse(topStories[i])));
             }
 
             return newsArticleList;

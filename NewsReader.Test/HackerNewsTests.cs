@@ -30,9 +30,9 @@ namespace NewsReader.Test
         [Fact]
         public void Get_HackerNewsItems_Controller_ShouldReturn_List()
         {
-            _hackerNewsService.Setup(svc => svc.GetItemsAsync(0, 10)).ReturnsAsync(Mocks.MockHackerNewsItems.GetHackerNewsItems());
+            _hackerNewsService.Setup(svc => svc.GetItemsAsync(0)).ReturnsAsync(Mocks.MockHackerNewsItems.GetHackerNewsItems());
 
-            var controller = new NewsReaderController(_logger.Object, _config, _hackerNewsService.Object);
+            var controller = new NewsReaderController(_logger.Object, _hackerNewsService.Object);
 
             controller.Get(0).Result.Should().HaveCount(3);
         }
@@ -40,13 +40,13 @@ namespace NewsReader.Test
         [Fact]
         public async void Get_HackerNewsItems_Service_ShouldReturn_List()
         {
-            _hackerNewsGateway.Setup(gw => gw.GetTopStoriesAsync()).ReturnsAsync(new List<string>() { "1", "2", "3" });
+            _hackerNewsGateway.Setup(gw => gw.GetTopStoriesAsync()).ReturnsAsync(new List<string>() { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" });
             _hackerNewsGateway.Setup(gw => gw.GetItemAsync(0)).ReturnsAsync(new Domain.Models.HackerNewsItem() { Id = 1 });
 
-            var service = new HackerNewsService(_hackerNewsGateway.Object);
-            var results = await service.GetItemsAsync(0, 2);
+            var service = new HackerNewsService(_config, _hackerNewsGateway.Object);
+            var results = await service.GetItemsAsync(0);
 
-            results.Count.Should().Be(2);
+            results.Count.Should().Be(10);
         }
     }
 }

@@ -6,6 +6,6 @@ namespace NewsReader.Domain.Contracts
 {
     public interface IHackerNewsService
     {
-        Task<List<HackerNewsItem>> GetItemsAsync(int skip, int take);
+        Task<List<HackerNewsItem>> GetItemsAsync(int pageIndex);
     }
 }

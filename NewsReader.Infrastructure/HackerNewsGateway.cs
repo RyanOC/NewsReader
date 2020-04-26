@@ -1,26 +1,26 @@
-﻿using NewsReader.Domain.Contracts;
-using NewsReader.Domain.Models;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Net.Http;
 using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
+using NewsReader.Domain.Contracts;
+using NewsReader.Domain.Models;
 
 namespace NewsReader.Infrastructure
 {
     public class HackerNewsGateway : IHackerNewsGateway
     {
-        public IHttpClientFactory HttpClientFactory { get; }
-        public IConfiguration Configuration { get; }
+        private readonly IHttpClientFactory _httpClientFactory;
+        private readonly IConfiguration _configuration;
 
         public HackerNewsGateway(IHttpClientFactory httpClientFactory, IConfiguration configuration)
         {
-            HttpClientFactory = httpClientFactory;
-            Configuration = configuration;
+            _httpClientFactory = httpClientFactory;
+            _configuration = configuration;
         }
 
         public async Task<List<string>> GetTopStoriesAsync()
         {
-            var client = HttpClientFactory.CreateClient("hackernewsapi");
+            var client = _httpClientFactory.CreateClient("hackernewsapi");
             var response = await client.GetAsync("topstories.json");
             var listJson = await response.Content.ReadAsStringAsync();
 
@@ -29,7 +29,7 @@ namespace NewsReader.Infrastructure
 
         public async Task<HackerNewsItem> GetItemAsync(int id)
         {
-            var client = HttpClientFactory.CreateClient("hackernewsapi");
+            var client = _httpClientFactory.CreateClient("hackernewsapi");
             var response = await client.GetAsync($"item/{id}.json");
             var itemJson = await response.Content.ReadAsStringAsync();
 
