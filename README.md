@@ -3,19 +3,12 @@
 ### Overview:
 This demo application is built using **ASP**.NET Core 3 Web API and Angular 8 to use data from the [Hacker News API](https://github.com/HackerNews/API)
 
-
-
 Other .Net Libraries Used:
 - Polly
 - Newtonsoft.Json
 - FluentAssertions
 - Moq
 - XUnit
-
-### Demo Links: ![azure build status](https://dev.azure.com/ryanoc333/ryanoc333/_apis/build/status/News%20Reader-Dev-CI?branchName=master)
-
-- [API](https://app-news-reader-dev.azurewebsites.net/api/newsreader/0)
-- [UI](https://app-news-reader-dev.azurewebsites.net/hacker-news)
 
 ### Backlog:
 - Add factory methods to create additional news feeds while maintaining clean code.
